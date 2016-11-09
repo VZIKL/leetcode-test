@@ -5,14 +5,17 @@
 #include <iostream>
 #include <map>
 #include <vector>
-std::vector<int> twoSum(std::vector<int>& nums, int target) {
-  int len = nums.size();
-  for (int x = 0; x < len; x++) {
-    for (int y = x + 1; y < len; y++) {
-      if (target == (nums[x] + nums[y])) {
-        return std::vector<int>{x, y};
+class Solution {
+ public:
+  std::vector<int> twoSum(std::vector<int>& nums, int target) {
+    int len = nums.size();
+    for (int x = 0; x < len; x++) {
+      for (int y = x + 1; y < len; y++) {
+        if (target == (nums[x] + nums[y])) {
+          return std::vector<int>{x, y};
+        }
       }
     }
+    return std::vector<int>();
   }
-  return std::vector<int>();
 }
