@@ -1,0 +1,18 @@
+// File Name: minimum-moves-to-equal-array-elements-II.cpp
+// Author:
+// Mail:
+// Created Time: 2017年1月17日 星期二 14时57分14秒
+#include <algorithm>
+#include <iostream>
+#include <vector>
+class Solution {
+public:
+    int minMoves2(std::vector<int>& nums) {
+        std::sort(nums.begin(), nums.end());
+        int result = 0,tmp = nums[nums.size()/2];
+        for(int num:nums){
+            result += abs(tmp - num);
+        }
+        return result;
+    }
+};
